@@ -4,7 +4,8 @@ OBJCOPY=arm-none-eabi-objcopy
 DEF_CFLAGS=-g -O2 -mlittle-endian -mthumb -ffreestanding -nostdlib -nostdinc
 
 # to run from SRAM
-DEF_CFLAGS+=-Wl,-Ttext,0x20000000 -Wl,-e,0x20000000
+#DEF_CFLAGS+=-Wl,-Ttext,0x20000000 -Wl,-e,0x20000000
+DEF_CFLAGS+=-Wl,-T,stm32vl_sram.ld
 
 # to write to flash then run
 # DEF_CFLAGS+=-Wl,-Ttext,0x08000000 -Wl,-e,0x08000000
